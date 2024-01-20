@@ -6,4 +6,6 @@
     <string name="phone">Phone</string>
     <string name="description">Description</string>
     <string name="save">Save</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="username">UserName</string>
 </resources>
