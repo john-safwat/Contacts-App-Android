@@ -1,6 +1,7 @@
 package com.example.contactsapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -28,6 +29,16 @@ class MainActivity : AppCompatActivity() {
                     )
                 )
                 contactsAdapter.notifyDataSetChanged()
+            }
+        }
+
+        contactsAdapter.onItemClickListener = object:ContactsAdapter.OnItemClickListener{
+            override fun onClickListener(contact: Contact) {
+                val intent = Intent(this@MainActivity , ContactDetailsActivity::class.java)
+                intent.putExtra("name" , contact.name)
+                intent.putExtra("phoneNumber" , contact.phoneNumber)
+                intent.putExtra("description" , contact.description)
+                startActivity(intent)
             }
         }
 
